@@ -1,0 +1,50 @@
+/* Configurações gerais */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Rolagem suave ao clicar nos links do menu */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+
+/* Estrutura principal */
+
+#main-header {
+    width: 100%;
+    position: fixed; /* Deixa o cabeçalho fixo no topo da página */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+main {
+    /* Cria um espaço no topo da página para que o conteúdo da primeira seção
+       não fique escondido atrás do cabeçalho fixo */
+    padding-top: 80px; 
+}
+
+.section-container {
+    /* Garante tela cheia */
+    width: 100%;
+    min-height: 100vh; /* Garante que a seção tenha, no mínimo, a altura total da tela */
+    
+    /* Centraliza o conteúdo dentro da seção */
+    display: flex;
+    justify-content: center; /* Alinha na vertical */
+    align-items: center;   /* Alinha na horizontal */
+    
+    /* Apenas para visualização, pode ser removido */
+    
+}
