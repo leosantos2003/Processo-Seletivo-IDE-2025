@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-h2{
+h2, h3{
     font-size: 36px;
 }
 
@@ -153,14 +153,42 @@ body {
 
 /* --- Projetos --- */
 
+.image-window img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-window {
+    width: 250px; 
+    max-width: 250px; 
+    height: auto; 
+    max-height: 250px;
+    background-color: #ffffff; 
+    border: 2px solid black; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 5px; 
+    float: right; 
+    margin: 10px; 
+}
+
+.container-projetos .content-window{
+    width: 100%; 
+    min-width: 0;
+    padding: 15px 10px;
+    font-family: var(--font-micro5);
+    font-weight: 400;
+    font-style: normal;
+}
+
 .window-header-projetos {
     padding: 1px 2px;
     background: linear-gradient(90deg, #604ABC 0%, #FE7FB4 100%);
     border: 2px solid black;
-    font-family: var(--font-micro5);
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .window-header-projetos h2 {
@@ -176,7 +204,48 @@ body {
 
 .project-description{
     border: 2px solid black;
+    padding: 5px 15px;
+    font-family: var(--font-micro5);
+    font-weight: 400;
+    font-style: normal;
+    min-height: 300px;
+    border-bottom: none;
 }
+
+.project-description p {
+    font-family: var(--font-VT323);
+    font-weight: 400;
+    font-style: normal;
+    padding: 20px 0px;
+    font-size: 30px;
+}
+
+.carousel-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+
+.nav-btn {
+    width: 60px;
+    height: 22px;
+    background-color: #604ABC; 
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: var(--font-VT323);
+}
+
+.nav-btn:first-child {
+    border-right: 2px solid black;
+}
+
+.nav-btn:last-child {
+    border-left: 2px solid black;
+}
+
 
 /* --- Integrantes --- */
 
