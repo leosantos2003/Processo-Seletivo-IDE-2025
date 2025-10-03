@@ -226,17 +226,31 @@ body {
 }
 
 .nav-btn {
-    background-color: #604ABC; 
-    color: white;
+    color: black;
+    background-color: inherit;
     border: none;
     font-size: 20px;
     cursor: pointer;
     font-family: var(--font-VT323);
 }
 
+.scroll-bar{
+    background-color: #604ABC; 
+    
+}
+.project-body .carousel-nav .scroll-bar{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
 .project-body .carousel-nav .nav-btn {
     width: 60px;
+}
+
+.project-body .carousel-nav .scroll-bar,
+.project-body .carousel-nav .nav-btn {
     height: 22px;
+    width: 90px; /* placeholder */
 }
 
 .nav-btn.prev-btn {
@@ -320,6 +334,14 @@ body {
     flex-direction: column;
     justify-content: space-between;
     border-left: 1px solid black;
+}
+
+
+.members-grid .scroll-bar{
+    height: 90px;
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 /* --- Contate-nos --- */
