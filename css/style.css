@@ -286,6 +286,9 @@ body {
     background: linear-gradient(90deg, #604ABC 0%, #FE7FB4 100%);
     border: 1px solid black;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-button{
@@ -295,6 +298,7 @@ body {
     border: 3px solid black;
     font-family: var(--font-micro5);
     font-size: 36px;
+    width: 220px;
 }
 
 #integrantes .content-window {
