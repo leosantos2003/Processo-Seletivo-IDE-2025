@@ -163,7 +163,7 @@ body {
     height: auto; 
     max-height: 250px;
     background-color: #ffffff; 
-    border: 2px solid black; 
+    border: 1px solid black; 
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
@@ -180,12 +180,13 @@ body {
     font-family: var(--font-micro5);
     font-weight: 400;
     font-style: normal;
+    border: 1px solid black;
 }
 
 .window-header-projetos {
     padding: 1px 2px;
     background: linear-gradient(90deg, #604ABC 0%, #FE7FB4 100%);
-    border: 2px solid black;
+    border: 1px solid black;
     margin-bottom: 15px;
 }
 
@@ -201,7 +202,7 @@ body {
 }
 
 .project-description{
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 5px 15px;
     font-family: var(--font-micro5);
     font-weight: 400;
@@ -222,7 +223,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .nav-btn {
@@ -239,8 +240,8 @@ body {
     
 }
 .project-body .carousel-nav .scroll-bar{
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .project-body .carousel-nav .nav-btn {
@@ -254,11 +255,11 @@ body {
 }
 
 .nav-btn.prev-btn {
-    border-right: 2px solid black;
+    border-right: 1px solid black;
 }
 
 .nav-btn.next-btn {
-    border-left: 2px solid black;
+    border-left: 1px solid black;
 }
 /* --- Meninas digitais ---*/
 
