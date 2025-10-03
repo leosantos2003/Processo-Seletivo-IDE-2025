@@ -52,7 +52,7 @@ html {
 }
 
 body {
-    background: 
+    background:
         radial-gradient(152.13% 52.09% at 80.91% 42.53%, #E7DFFF 43.75%, #C8B6FF 48.08%, #FFFFFF 100%),
         radial-gradient(103.75% 30.1% at 24.57% 64.74%, rgba(253, 127, 180, 0.38) 0%, rgba(200, 182, 255, 0.38) 100%);
 
@@ -78,14 +78,26 @@ body {
     font-size: 15px;
     line-height: 100%;
     color: #ffffff;
+    display: inline-block;
+    padding: 6px 7px;
+    border: 2px solid var(--color-pink);
+    border-radius: 50px;
     text-decoration: none;
+    background-clip: padding-box;
+    transition: all 0.2s ease-in-out;
+}
+
+#main-header nav a:hover{
+    background: white;
+    color: #7e58f1cc;
+    border: 2px solid #7e58f1cc;
 }
 
 .section-container {
     /* Garante tela cheia */
     width: 100%;
     min-height: 100vh; /* Garante que a seção tenha, no mínimo, a altura total da tela */
-    
+   
     /* Centraliza o conteúdo dentro da seção */
     display: flex;
     justify-content: center; /* Alinha na vertical */
@@ -318,6 +330,12 @@ body {
     max-width: 120px;
     image-rendering: pixelated;
     object-fit: contain;
+    transition: all 0.2s ease-in-out;
+}
+
+.member-card:hover{
+    transform: scale(1.01);
+    box-shadow:0 10px 20px rgba(234, 113, 250, 0.38)
 }
 
 .window-header.center-header {
@@ -486,4 +504,8 @@ footer a{
 footer img {
     max-width: 60px;
     max-height: 60px;
+    transition: transform 0.2s ease-in-out;
+}
+footer img:hover{
+    transform: scale(1.1);
 }
