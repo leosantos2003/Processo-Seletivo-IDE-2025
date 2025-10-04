@@ -321,7 +321,7 @@ body {
     padding: 45px 30px;
     position: relative;
     max-height: 300px;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 #members-scroll-area {
@@ -331,7 +331,7 @@ body {
     text-align: center;
     position: relative;
     height: 210px;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .member-card {
