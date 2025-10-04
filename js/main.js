@@ -56,6 +56,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
+            if (section.id === 'projetos') {
+                var scrollArea = document.getElementById("projects-scroll-area");
+                var scrollUp = document.getElementById("projects-scroll-up");
+                var scrollDown = document.getElementById("projects-scroll-down");
+                var scrollBar = document.getElementById("projects-scroll-bar");
+                var imgContainer = document.getElementById("projects-img-container");
+
+                var updateScrollBar = function() {
+                    var maxOffsetWidth = scrollArea.scrollWidth - scrollArea.offsetWidth;
+                    var pos = scrollArea.scrollLeft / maxOffsetWidth;
+                    var maxScrollBarLeft = scrollBar.parentElement.offsetWidth - scrollBar.offsetWidth;
+                    scrollBar.style.left = `${maxScrollBarLeft * pos}px`;
+                }
+
+                var updateImage = function() {
+                    imgContainer.style.display = "none";
+                    while (imgContainer.firstChild) {
+                        imgContainer.removeChild(imgContainer.firstChild);
+                    }
+                    for (var i = 0; i < scrollArea.children.length; i++) {
+                        var element = scrollArea.children[i];
+                        if (element.offsetLeft >= scrollArea.scrollLeft) {
+                            for (var j = 0; j < element.children.length; j++) {
+                                var img = element.children[j];
+                                if (img.tagName == "IMG") {
+                                    imgContainer.appendChild(img);
+                                    imgContainer.style.display = "block";
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                scrollDown.addEventListener("click", function () {
+                    scrollArea.scrollLeft += scrollArea.offsetWidth;
+                    updateScrollBar();
+                    updateImage();
+                });
+                scrollUp.addEventListener("click", function () {
+                    scrollArea.scrollLeft -= scrollArea.offsetWidth;
+                    updateScrollBar();
+                    updateImage();
+                });
+
+                /*
+                scrollArea.addEventListener("wheel", function (e) {
+                    if (e.deltaX > 0) {
+                        scrollArea.scrollLeft += scrollArea.offsetWidth;
+                    } else if (e.deltaX < 0) {
+                        scrollArea.scrollLeft -= scrollArea.offsetWidth;
+                    }
+                    updateScrollBar();
+                    updateImage();
+                    e.preventDefault();
+                });
+                */
+            }
+
         } catch (error) {
             console.error('Falha ao carregar a seção:', error);
         }
