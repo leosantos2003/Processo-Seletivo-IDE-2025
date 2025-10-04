@@ -245,12 +245,18 @@ body {
     font-size: 20px;
     cursor: pointer;
     font-family: var(--font-VT323);
+    flex-grow: 0;
+}
+
+.scroll-bar-area {
+    flex-grow: 1;
 }
 
 .scroll-bar{
-    background-color: #604ABC; 
-    
+    background-color: #604ABC;
+    position: relative;
 }
+
 .project-body .carousel-nav .scroll-bar{
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -311,12 +317,21 @@ body {
 
 .members-grid {
     border: 1px solid black;
-    display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(140px, 1fr));
-    gap: 30px;
     text-align: center;
     padding: 45px 30px;
     position: relative;
+    max-height: 300px;
+    overflow-y: hidden;
+}
+
+#members-scroll-area {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(140px, 1fr));
+    gap: 0 20px;
+    text-align: center;
+    position: relative;
+    height: 210px;
+    overflow-y: hidden;
 }
 
 .member-card {
@@ -328,6 +343,8 @@ body {
     flex-direction: column;
     align-content: center;
     line-height: 1.5;
+    height: 210px;
+    box-sizing: border-box;
 }
 
 .member-card img {

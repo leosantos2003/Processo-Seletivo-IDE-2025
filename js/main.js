@@ -22,6 +22,40 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sectionContainer) {
                 sectionContainer.innerHTML = content;
             }
+
+            if (section.id === 'integrantes') {
+                var scrollArea = document.getElementById("members-scroll-area");
+                var scrollUp = document.getElementById("members-scroll-up");
+                var scrollDown = document.getElementById("members-scroll-down");
+                var scrollBar = document.getElementById("members-scroll-bar");
+
+                var updateScrollBar = function() {
+                    var maxOffsetHeight = scrollArea.scrollHeight - scrollArea.offsetHeight;
+                    var pos = scrollArea.scrollTop / maxOffsetHeight;
+                    var maxScrollBarTop = scrollBar.parentElement.offsetHeight - scrollBar.offsetHeight;
+                    scrollBar.style.top = `${maxScrollBarTop * pos}px`;
+                }
+
+                scrollDown.addEventListener("click", function () {
+                    scrollArea.scrollTop += scrollArea.offsetHeight;
+                    updateScrollBar();
+                });
+                scrollUp.addEventListener("click", function () {
+                    scrollArea.scrollTop -= scrollArea.offsetHeight;
+                    updateScrollBar();
+                });
+
+                scrollArea.addEventListener("wheel", function (e) {
+                    if (e.deltaY > 0) {
+                        scrollArea.scrollTop += scrollArea.offsetHeight;
+                    } else if (e.deltaY < 0) {
+                        scrollArea.scrollTop -= scrollArea.offsetHeight;
+                    }
+                    updateScrollBar();
+                    e.preventDefault();
+                });
+            }
+
         } catch (error) {
             console.error('Falha ao carregar a seção:', error);
         }
