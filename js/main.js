@@ -77,11 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     for (var i = 0; i < scrollArea.children.length; i++) {
                         var element = scrollArea.children[i];
+                        console.log(element.offsetLeft + " >= " + scrollArea.scrollLeft);
                         if (element.offsetLeft >= scrollArea.scrollLeft) {
                             for (var j = 0; j < element.children.length; j++) {
                                 var img = element.children[j];
                                 if (img.tagName == "IMG") {
-                                    imgContainer.appendChild(img);
+                                    imgContainer.appendChild(img.cloneNode());
                                     imgContainer.style.display = "block";
                                 }
                             }
